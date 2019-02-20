@@ -9,10 +9,16 @@ var bot = linebot({
 
 bot.on('message', function(event) {
   console.log(event); //把收到訊息的 event 印出來看看
+  console.log(event.message); //把收到訊息的 event 印出來看看
   event.reply(event.message.text).then(function (data) {
     // success
+	  console.log("=============success==============");
+	  console.log(event.message.text);
+	  console.log(data);
   }).catch(function (error) {
     // error
+	  console.log("=============error==============");
+	  console.log(error);
   });
 });
 
@@ -22,6 +28,8 @@ app.post('/', linebotParser);
 
 //express port:3000
 var server = app.listen(process.env.PORT || 8080, function() {
+	console.log("=============process==============");
+	console.log(process);
   var port = server.address().port;
   console.log("App now running on port:", port);
 });
