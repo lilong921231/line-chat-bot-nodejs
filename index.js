@@ -1,9 +1,8 @@
 var linebot = require('linebot');
 var express = require('express');
-var express = require('./ChannelConfig.js');
 
 var bot = linebot({
-  channelId: CHANNEL_ID,
+  channelId: "1648099378",
   channelSecret: "47842a3e38d739c782e704d887261571",
   channelAccessToken: "e+OlsdO4+2hmZXoWTevXxGsXWtBBX7YvJokoFD3agAshhC3zd/2g8OjsI4Tas6YuExx9nmvFv5WnvVbE15n38kNKkVJIRi+bhJsJSfeP1JK8VZeP+1mFbB3XFWg1teBfggG5EYd8rv0LtF+OQX4BfwdB04t89/1O/w1cDnyilFU="
 });
