@@ -9,6 +9,18 @@ var bot = linebot({
 
 bot.on('message', function(event) {
   console.log("=============event==============");
+  console.log(event); //把收到訊息的 event 印出來看看
+  console.log(event.message); //把收到訊息的 event 印出來看看
+  event.reply(event.message.text).then(function (data) {
+    // success
+	console.log("=============success==============");
+	console.log(event.message.text);
+	console.log(data);
+  }).catch(function (error) {
+    // error
+	console.log("=============error==============");
+	console.log(error);
+  });
 });
 
 const app = express();
