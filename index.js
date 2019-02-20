@@ -32,7 +32,7 @@ app.post('/', linebotParser);
 //express port:3000
 var server = app.listen(process.env.PORT || 8080, function() {
 	console.log("=============process==============");
-	console.log(process.env);
+	console.log(process.env.PORT);
   var port = server.address().port;
   console.log("App now running on port:", port);
 });
