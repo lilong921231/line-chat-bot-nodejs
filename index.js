@@ -2,9 +2,9 @@ var linebot = require('linebot');
 var express = require('express');
 
 var bot = linebot({
-  channelId: "1647898215",
-  channelSecret: "4b18885a067aaa5c27123e6ec66f3a42",
-  channelAccessToken: "klUTk/W5MuwoP1OG4njZM1zlaOdjW0CLYrmXCQiosr3+IVj2jxvxGanLVv/7lhxvLHSKNAChYYQjUp3kLhXeFuSTmgrdR7jq1ORWIHFKOK8rbAx7rG0lNCAluxle0UojeSdZwrbRi4H9jXEXL0BkVwdB04t89/1O/w1cDnyilFU="
+  channelId: "1648099378",
+  channelSecret: "47842a3e38d739c782e704d887261571",
+  channelAccessToken: "e+OlsdO4+2hmZXoWTevXxGsXWtBBX7YvJokoFD3agAshhC3zd/2g8OjsI4Tas6YuExx9nmvFv5WnvVbE15n38kNKkVJIRi+bhJsJSfeP1JK8VZeP+1mFbB3XFWg1teBfggG5EYd8rv0LtF+OQX4BfwdB04t89/1O/w1cDnyilFU="
 });
 
 bot.on('message', function(event) {
