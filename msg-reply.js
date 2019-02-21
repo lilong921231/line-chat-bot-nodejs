@@ -82,7 +82,8 @@ function msgReply(text) {
             }
         }
     ];
-    return talk_block[parseInt(text) -1];
+    // return talk_block[parseInt(text) -1];
+    return talk_block;
 }
 
 module.exports = {

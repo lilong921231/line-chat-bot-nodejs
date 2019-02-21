@@ -26,17 +26,27 @@ function msgSend(event) {
     //         console.log(error);
     //     });
     // }
-    event.reply(msgs).then(function (data) {
-        // success
-        console.log("=============success==============");
-        console.log(event.message.text);
-        console.log(data);
-        // msgSend();
-    }).catch(function (error) {
-        // error
-        console.log("=============error==============");
-        console.log(error);
-    });
+
+    // event.reply(msgs).then(function (data) {
+    //     // success
+    //     console.log("=============success==============");
+    //     console.log(event.message.text);
+    //     console.log(data);
+    //     // msgSend();
+    // }).catch(function (error) {
+    //     // error
+    //     console.log("=============error==============");
+    //     console.log(error);
+    // });
+
+
+    if (index < msgs.length) {
+        bot.push(msgs[index]);
+        index++;
+        timer = setInterval(msgSend(event), 2000);
+    }else {
+        clearTimeout(timer);
+    }
 }
 bot.on('message', function (event) {
     console.log(event); //把收到訊息的 event 印出來看看
