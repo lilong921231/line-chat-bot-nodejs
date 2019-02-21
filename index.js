@@ -4,7 +4,7 @@ const express = require('express');
 const reply = require('./msgReply');
 
 const bot = linebot({
-  channelId: "1648295438",
+  channelId: config.CHANNEL_ID,
   channelSecret: "2fe8f7a52d94b031b7d002688bda80db",
   channelAccessToken: "wjJikM9SGt8DmurAb14g20haoST6tMLq2Q9qJnUUZfkr/E7gKEYdAmT9rDj1efz/c6Zf8ISCNrzm+6SkQUZxNPZB4obXI60HlC8b8bVDqT1nBhpCylwfk8OpnjPf+wtbxCkVmCda8wcQBPM3BkdyIwdB04t89/1O/w1cDnyilFU="
 });
@@ -38,6 +38,4 @@ app.post('/', linebotParser);
 var server = app.listen(process.env.PORT || 8080, function() {
   var port = server.address().port;
   console.log("App now running on port:", port);
-  console.log(config);
-  console.log(reply.msgReply(1234));
 });
