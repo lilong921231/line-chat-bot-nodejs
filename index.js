@@ -62,6 +62,7 @@ function msgSend(event) {
     });
 }
 bot.on('message', function (event) {
+    index = 0;
     console.log(event); //把收到訊息的 event 印出來看看
     msgs = reply.msgReply(event.message.text);
     msgSend(event);
