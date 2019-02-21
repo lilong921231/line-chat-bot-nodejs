@@ -21,12 +21,16 @@ function msgSend(event) {
             console.log(event.message.text);
             console.log(data);
             index = index + 1;
-        }).reply(msgs[index]).then(function (data) {
+        }).catch(function (error) {
+            // error
+            console.log("=============error==============");
+            console.log(error);
+        });
+        event.reply(msgs[1]).then(function (data) {
             // success
             console.log("=============success==============");
             console.log(event.message.text);
             console.log(data);
-            index = index + 1;
         }).catch(function (error) {
             // error
             console.log("=============error==============");
