@@ -12,25 +12,14 @@ const bot = lineBot({
 var msgs, index = 0;
 
 function msgSend(event) {
-    console.log(event);
     if (index < msgs.length) {
-        console.log(msgs[index]);
         event.reply(msgs[index]).then(function (data) {
             // success
             console.log("=============success==============");
             console.log(event.message.text);
             console.log(data);
             index = index + 1;
-        }).catch(function (error) {
-            // error
-            console.log("=============error==============");
-            console.log(error);
-        });
-        event.reply(msgs[1]).then(function (data) {
-            // success
-            console.log("=============success==============");
-            console.log(event.message.text);
-            console.log(data);
+            // msgSend();
         }).catch(function (error) {
             // error
             console.log("=============error==============");
