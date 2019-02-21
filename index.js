@@ -11,8 +11,8 @@ const bot = lineBot({
 bot.on('message', function (event) {
     console.log(event); //把收到訊息的 event 印出來看看
     console.log(event.message); //把收到訊息的 event 印出來看看
-    console.log(reply.msgReply);
-    event.reply(event.message.text).then(function (data) {
+    console.log(reply.msgReply(event.message.text));
+    event.reply(reply.msgReply(event.message.text)).then(function (data) {
         // success
         console.log("=============success==============");
         console.log(event.message.text);
