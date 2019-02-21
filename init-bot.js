@@ -9,7 +9,7 @@ function initBot(config) {
         channelAccessToken: "wjJikM9SGt8DmurAb14g20haoST6tMLq2Q9qJnUUZfkr/E7gKEYdAmT9rDj1efz/c6Zf8ISCNrzm+6SkQUZxNPZB4obXI60HlC8b8bVDqT1nBhpCylwfk8OpnjPf+wtbxCkVmCda8wcQBPM3BkdyIwdB04t89/1O/w1cDnyilFU="
     });
 
-    bot.on('message', message(event));
+    bot.on('message', funcReply(event));
 
     const app = express();
     const linebotParser = bot.parser();
@@ -22,7 +22,7 @@ function initBot(config) {
     });
 }
 
-function message(event) {
+function funcReply(event) {
     console.log(event); //把收到訊息的 event 印出來看看
     console.log(event.message); //把收到訊息的 event 印出來看看
     console.log(reply.msgReply);
