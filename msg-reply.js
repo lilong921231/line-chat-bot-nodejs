@@ -1,6 +1,8 @@
 function msgReply(text) {
-
-    return text;
+    if(text !== 1) {
+        return text;
+    }
+    
 }
 
 module.exports = {
