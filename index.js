@@ -19,7 +19,7 @@ function msgSend(event) {
             console.log(event.message.text);
             console.log(data);
             index = index + 1;
-            msgSend();
+            msgSend(event);
         }).catch(function (error) {
             // error
             console.log("=============error==============");
