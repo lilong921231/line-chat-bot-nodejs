@@ -12,20 +12,31 @@ const bot = lineBot({
 var msgs, index = 0;
 
 function msgSend(event) {
-    if (index < msgs.length) {
-        event.reply(msgs[index]).then(function (data) {
-            // success
-            console.log("=============success==============");
-            console.log(event.message.text);
-            console.log(data);
-            index = index + 1;
-            // msgSend();
-        }).catch(function (error) {
-            // error
-            console.log("=============error==============");
-            console.log(error);
-        });
-    }
+    // if (index < msgs.length) {
+    //     event.reply(msgs[index]).then(function (data) {
+    //         // success
+    //         console.log("=============success==============");
+    //         console.log(event.message.text);
+    //         console.log(data);
+    //         index = index + 1;
+    //         // msgSend();
+    //     }).catch(function (error) {
+    //         // error
+    //         console.log("=============error==============");
+    //         console.log(error);
+    //     });
+    // }
+    event.reply(msgs).then(function (data) {
+        // success
+        console.log("=============success==============");
+        console.log(event.message.text);
+        console.log(data);
+        // msgSend();
+    }).catch(function (error) {
+        // error
+        console.log("=============error==============");
+        console.log(error);
+    });
 }
 bot.on('message', function (event) {
     console.log(event); //把收到訊息的 event 印出來看看
