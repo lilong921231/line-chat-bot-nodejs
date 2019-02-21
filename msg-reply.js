@@ -47,6 +47,7 @@ function msgReply(text) {
         {
             "type": "flex",
             "altText": "Flex Message",
+                    "margin": "lg",
             "contents": {
                 "type": "bubble",
                 "header": {
@@ -56,9 +57,6 @@ function msgReply(text) {
                         {
                             "type": "text",
                             "text": "給与",
-                            "size": "sm",
-                            "weight": "bold",
-                            "color": "#AAAAAA"
                         },
                         {
                             "type": "text",
@@ -72,9 +70,7 @@ function msgReply(text) {
                     "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_4_news.png",
                     "size": "full",
                     "aspectRatio": "20:13",
-                    "aspectMode": "fit",
-                    "size": "4xl",
-                    "margin": "lg"
+                    "aspectMode": "fit"
                 }
             }
         }
