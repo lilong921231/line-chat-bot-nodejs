@@ -46,6 +46,7 @@ function msgSend(event) {
         console.log(data);
         index = index + 1;
         var timer = setInterval(function(){
+            console.log(index);
             bot.push(msgs[index]);
             index = index + 1;
             if (index >= msgs.length) {
@@ -64,6 +65,7 @@ bot.on('message', function (event) {
     console.log(event.message); //把收到訊息的 event 印出來看看
     console.log(reply.msgReply(event.message.text));
     msgs = reply.msgReply(event.message.text);
+    bot.push("5678");
     msgSend(event);
 });
 
@@ -75,5 +77,6 @@ app.post('/', linebotParser);
 var server = app.listen(process.env.PORT || 8080, function() {
     var port = server.address().port;
     console.log("App now running on port:", port);
+    bot.push("1234");
 });
 
