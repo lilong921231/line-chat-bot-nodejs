@@ -1,9 +1,9 @@
-var config = require('./ChannelConfig');
-var linebot = require('linebot');
-var express = require('express');
-var reply = require('./msgReply');
+const config = require('./ChannelConfig');
+const linebot = require('linebot');
+const express = require('express');
+const reply = require('./msgReply');
 
-var bot = linebot({
+const bot = linebot({
   channelId: "1648099378",
   channelSecret: "4b18885a067aaa5c27123e6ec66f3a42",
   channelAccessToken: "klUTk/W5MuwoP1OG4njZM1zlaOdjW0CLYrmXCQiosr3+IVj2jxvxGanLVv/7lhxvLHSKNAChYYQjUp3kLhXeFuSTmgrdR7jq1ORWIHFKOK8rbAx7rG0lNCAluxle0UojeSdZwrbRi4H9jXEXL0BkVwdB04t89/1O/w1cDnyilFU="
@@ -12,7 +12,23 @@ var bot = linebot({
 bot.on('message', function(event) {
   console.log(event); //把收到訊息的 event 印出來看看
   console.log(event.message); //把收到訊息的 event 印出來看看
+  event.reply(msgReply(event.message.text)).then(function (data) {
+    // success
+	console.log("=============success==============");
+	console.log(event.message.text);
+	console.log(data);
+  }).catch(function (error) {
+    // error
+	console.log("=============error==============");
+	console.log(error);
+  });
 });
+
+
+function msgReply(text) {
+    console.log("------------msgReply:" + text);
+    return text;
+}
 
 const app = express();
 const linebotParser = bot.parser();
@@ -22,4 +38,6 @@ app.post('/', linebotParser);
 var server = app.listen(process.env.PORT || 8080, function() {
   var port = server.address().port;
   console.log("App now running on port:", port);
+  console.log(config);
+  console.log(reply);
 });
