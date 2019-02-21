@@ -9,31 +9,30 @@ const bot = lineBot({
 });
 
 
-var msgs;
+var msgs, index = 0;
 
-function msgSend(event, index) {
-    event.reply(msgs[index]).then(function (data) {
-        // success
-        console.log("=============success==============");
-        console.log(event.message.text);
-        console.log(data);
-        index = index + 1;
-        if (index < msgs.length) {
-            msgSend(event, index)
-        }
-    }).catch(function (error) {
-        // error
-        console.log("=============error==============");
-        console.log(error);
-    });
+function msgSend(event) {
+    if (index < msgs.length) {
+        event.reply(msgs[index]).then(function (data) {
+            // success
+            console.log("=============success==============");
+            console.log(event.message.text);
+            console.log(data);
+            index = index + 1;
+            msgSend();
+        }).catch(function (error) {
+            // error
+            console.log("=============error==============");
+            console.log(error);
+        });
+    }
 }
 bot.on('message', function (event) {
     console.log(event); //把收到訊息的 event 印出來看看
     console.log(event.message); //把收到訊息的 event 印出來看看
     console.log(reply.msgReply(event.message.text));
     msgs = reply.msgReply(event.message.text);
-    var i = 0;
-    msgSend(event, i);
+    msgSend(event);
 });
 
 const app = express();
