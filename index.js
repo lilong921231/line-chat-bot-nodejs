@@ -8,20 +8,32 @@ const bot = lineBot({
     channelAccessToken: "wjJikM9SGt8DmurAb14g20haoST6tMLq2Q9qJnUUZfkr/E7gKEYdAmT9rDj1efz/c6Zf8ISCNrzm+6SkQUZxNPZB4obXI60HlC8b8bVDqT1nBhpCylwfk8OpnjPf+wtbxCkVmCda8wcQBPM3BkdyIwdB04t89/1O/w1cDnyilFU="
 });
 
-bot.on('message', function (event) {
-    console.log(event); //把收到訊息的 event 印出來看看
-    console.log(event.message); //把收到訊息的 event 印出來看看
-    console.log(reply.msgReply);
-    event.reply(event.message.text).then(function (data) {
+
+var msgs;
+
+function msgSend(event, index) {
+    event.reply(msgs[index]).then(function (data) {
         // success
         console.log("=============success==============");
         console.log(event.message.text);
         console.log(data);
+        index = index + 1;
+        if (index < msgs.length) {
+            msgSend(event, index)
+        }
     }).catch(function (error) {
         // error
         console.log("=============error==============");
         console.log(error);
     });
+}
+bot.on('message', function (event) {
+    console.log(event); //把收到訊息的 event 印出來看看
+    console.log(event.message); //把收到訊息的 event 印出來看看
+    console.log(reply.msgReply(event.message.text));
+    msgs = reply.msgReply(event.message.text);
+    var i = 0;
+    msgSend(event, i);
 });
 
 const app = express();
