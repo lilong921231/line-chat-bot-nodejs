@@ -47,6 +47,7 @@ function msgSend(event) {
         index = index + 1;
         var timer = setInterval(function(){
             console.log(index);
+            console.log(event.userId);
             bot.push(event.userId, msgs[index]);
             index = index + 1;
             if (index >= msgs.length) {
@@ -62,8 +63,6 @@ function msgSend(event) {
 }
 bot.on('message', function (event) {
     console.log(event); //把收到訊息的 event 印出來看看
-    console.log(event.message); //把收到訊息的 event 印出來看看
-    console.log(reply.msgReply(event.message.text));
     msgs = reply.msgReply(event.message.text);
     msgSend(event);
 });
