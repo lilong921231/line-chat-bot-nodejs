@@ -1,7 +1,7 @@
-const config = require('./ChannelConfig');
-const linebot = require('linebot');
-const express = require('express');
-const reply = require('./msgReply');
+var config = require('./ChannelConfig');
+var linebot = require('linebot');
+var express = require('express');
+var reply = require('./msgReply');
 
 var bot = linebot({
   channelId: "1648099378",
