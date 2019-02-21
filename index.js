@@ -12,33 +12,6 @@ const bot = lineBot({
 var msgs, index = 0;
 
 function msgSend(event) {
-    // if (index < msgs.length) {
-    //     event.reply(msgs[index]).then(function (data) {
-    //         // success
-    //         console.log("=============success==============");
-    //         console.log(event.message.text);
-    //         console.log(data);
-    //         index = index + 1;
-    //         // msgSend();
-    //     }).catch(function (error) {
-    //         // error
-    //         console.log("=============error==============");
-    //         console.log(error);
-    //     });
-    // }
-
-    // event.reply(msgs).then(function (data) {
-    //     // success
-    //     console.log("=============success==============");
-    //     console.log(event.message.text);
-    //     console.log(data);
-    //     // msgSend();
-    // }).catch(function (error) {
-    //     // error
-    //     console.log("=============error==============");
-    //     console.log(error);
-    // });
-
     event.reply(msgs[index]).then(function (data) {
         // success
         console.log("=============success==============");
@@ -46,7 +19,6 @@ function msgSend(event) {
         console.log(data);
         index = index + 1;
         var timer = setInterval(function(){
-            console.log(index);
             console.log(event.source.userId);
             bot.push(event.source.userId, msgs[index]);
             index = index + 1;
@@ -54,7 +26,6 @@ function msgSend(event) {
                 clearTimeout(timer);
             }
         }, 2000);
-        // msgSend();
     }).catch(function (error) {
         // error
         console.log("=============error==============");
