@@ -36,7 +36,7 @@ function msgReply(text) {
                 ]
             }
         }
-    }:
+    };
     return talk_block;
 }
 
