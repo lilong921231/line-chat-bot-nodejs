@@ -4,7 +4,7 @@ const express = require('express');
 const reply = require('./msgReply');
 
 var bot = linebot({
-  channelId: config.CHANNEL_ID,
+  channelId: "1648099378",
   channelSecret: "4b18885a067aaa5c27123e6ec66f3a42",
   channelAccessToken: "klUTk/W5MuwoP1OG4njZM1zlaOdjW0CLYrmXCQiosr3+IVj2jxvxGanLVv/7lhxvLHSKNAChYYQjUp3kLhXeFuSTmgrdR7jq1ORWIHFKOK8rbAx7rG0lNCAluxle0UojeSdZwrbRi4H9jXEXL0BkVwdB04t89/1O/w1cDnyilFU="
 });
