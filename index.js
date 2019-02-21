@@ -9,7 +9,7 @@ const bot = lineBot({
 });
 
 
-var msgs, index = 0;
+var msgs, index = 0, timer;
 
 function msgSend(event) {
     // if (index < msgs.length) {
