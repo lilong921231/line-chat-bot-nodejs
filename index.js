@@ -1,10 +1,10 @@
-require('./ChannelConfig');
-var linebot = require('linebot');
-var express = require('express');
-var reply = require('./msgReply');
+const config = require('./ChannelConfig');
+const linebot = require('linebot');
+const express = require('express');
+const reply = require('./msgReply');
 
 var bot = linebot({
-  channelId: CHANNEL_ID,
+  channelId: config.CHANNEL_ID,
   channelSecret: "4b18885a067aaa5c27123e6ec66f3a42",
   channelAccessToken: "klUTk/W5MuwoP1OG4njZM1zlaOdjW0CLYrmXCQiosr3+IVj2jxvxGanLVv/7lhxvLHSKNAChYYQjUp3kLhXeFuSTmgrdR7jq1ORWIHFKOK8rbAx7rG0lNCAluxle0UojeSdZwrbRi4H9jXEXL0BkVwdB04t89/1O/w1cDnyilFU="
 });
