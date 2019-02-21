@@ -6,7 +6,7 @@ const reply = require('./msgReply');
 const bot = linebot({
   channelId: "1648099378",
   channelSecret: "4b18885a067aaa5c27123e6ec66f3a42",
-  channelAccessToken: "klUTk/W5MuwoP1OG4njZM1zlaOdjW0CLYrmXCQiosr3+IVj2jxvxGanLVv/7lhxvLHSKNAChYYQjUp3kLhXeFuSTmgrdR7jq1ORWIHFKOK8rbAx7rG0lNCAluxle0UojeSdZwrbRi4H9jXEXL0BkVwdB04t89/1O/w1cDnyilFU="
+  channelAccessToken: "wjJikM9SGt8DmurAb14g20haoST6tMLq2Q9qJnUUZfkr/E7gKEYdAmT9rDj1efz/c6Zf8ISCNrzm+6SkQUZxNPZB4obXI60HlC8b8bVDqT1nBhpCylwfk8OpnjPf+wtbxCkVmCda8wcQBPM3BkdyIwdB04t89/1O/w1cDnyilFU="
 });
 
 bot.on('message', function(event) {
