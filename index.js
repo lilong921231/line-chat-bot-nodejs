@@ -47,7 +47,7 @@ function msgSend(event) {
         index = index + 1;
         var timer = setInterval(function(){
             console.log(index);
-            bot.push(msgs[index]);
+            bot.push('testline', msgs[index]);
             index = index + 1;
             if (index >= msgs.length) {
                 clearTimeout(timer);
