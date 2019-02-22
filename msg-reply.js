@@ -1,7 +1,21 @@
 function msgReply(text) {
-    if (text !== '1') {
-        return text;
+    switch (text) {
+        case "1":
+            return msgStart();
+            break;
+        case "2":
+            return msgTeaser();
+            break;
+        default:
+            return text;
     }
+}
+
+function msgTeaser() {
+    return ["msgTeaser"];
+}
+
+function msgStart() {
     var talk_block = [
         {
             "type": "text",
