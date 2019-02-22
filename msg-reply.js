@@ -11,7 +11,7 @@ function msgReply(text) {
             return msgStart();
             break;
         default:
-            return text;
+            return [text];
     }
 }
 
