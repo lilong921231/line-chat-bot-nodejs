@@ -1,18 +1,19 @@
 function msgReply(text) {
+    if (text.startWith("B_")) {
+        return msgInsights();
+    }
     switch (text) {
         case "1":
             return msgStart();
-            break;
-        case "2":
-            return msgTeaser();
             break;
         default:
             return text;
     }
 }
 
-function msgTeaser() {
-    return ["msgTeaser"];
+function msgInsights() {
+    var talk_block = ["msgTeaser"];
+    return talk_block;
 }
 
 function msgStart() {
