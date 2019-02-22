@@ -1,6 +1,6 @@
 function msgReply(text) {
     var reg = /^B_[0-9]{4}$/;
-    if (text.equals("B_")) {
+    if (text === "B_") {
         return msgInsights("B_2307");
     } else if (reg.test(text)) {
         return msgInsights(text);
