@@ -32,7 +32,7 @@ function msgStart(text) {
             "type": "text",
             "text": "今週の口座入出金予定をご案内します。"
         },
-        msgStartType(parseInt(index))
+        msgStartType(parseInt(text))
     ];
     
     return talk_block;
