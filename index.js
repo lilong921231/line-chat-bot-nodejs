@@ -16,10 +16,10 @@ function msgSend(event) {
         // success
         console.log("=============success==============");
         console.log(event.message.text);
+        console.log(event.source.userId);
         console.log(data);
         index = index + 1;
         var timer = setInterval(function(){
-            console.log(event.source.userId);
             bot.push(event.source.userId, msgs[index]);
             index = index + 1;
             if (index >= msgs.length) {
