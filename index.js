@@ -20,9 +20,7 @@ function msgSend(event) {
         console.log(data);
         index = index + 1;
         var timer = setInterval(function(){
-            if (event.message.text !== "2" || index !== 2) {
-                bot.push(event.source.userId, msgs[index]);
-            }
+            bot.push(event.source.userId, msgs[index]);
             index = index + 1;
             if (index >= msgs.length) {
                 clearTimeout(timer);
