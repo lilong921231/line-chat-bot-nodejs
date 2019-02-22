@@ -9,20 +9,20 @@ const bot = lineBot({
 });
 
 
-var msgs, index = 0;
+let infos, index = 0;
 
 function msgSend(event) {
-    event.reply(msgs[index]).then(function (data) {
+    event.reply(infos[index]).then(function (data) {
         // success
         console.log("=============success==============");
         console.log(event.message.text);
         console.log(event.source.userId);
         console.log(data);
         index = index + 1;
-        var timer = setInterval(function(){
-            bot.push(event.source.userId, msgs[index]);
+        const timer = setInterval(function(){
+            bot.push(event.source.userId, infos[index]);
             index = index + 1;
-            if (index >= msgs.length) {
+            if (index >= infos.length) {
                 clearTimeout(timer);
             }
         }, 2000);
@@ -35,7 +35,7 @@ function msgSend(event) {
 bot.on('message', function (event) {
     index = 0;
     console.log(event); //把收到訊息的 event 印出來看看
-    msgs = reply.msgReply(event.message.text);
+    infos = reply.msgReply(event.message.text);
     msgSend(event);
 });
 
@@ -44,8 +44,8 @@ const linebotParser = bot.parser();
 app.post('/', linebotParser);
 
 //express port:3000
-var server = app.listen(process.env.PORT || 8080, function() {
-    var port = server.address().port;
+const server = app.listen(process.env.PORT || 8080, function() {
+    const port = server.address().port;
     console.log("App now running on port:", port);
 });
 
