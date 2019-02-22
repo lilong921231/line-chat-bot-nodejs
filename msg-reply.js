@@ -1,40 +1,40 @@
 function msgReply(text) {
-    var reg = /^B_[0-9]{4}$/;
+    const regExp = /^B_[0-9]{4}$/;
     if (text === "B_") {
         return msgInsights("B_2307");
-    } else if (reg.test(text)) {
+    } else if (regExp.test(text)) {
         return msgInsights(text);
     }
-    
+
     switch (text) {
         case "1":
-            return msgStart(text);
-            break;
         case "2":
-            return msgStart(text);
+            return msgStart(parseInt(text));
         default:
             return [text];
     }
 }
 
 function msgInsights() {
-    var talk_block = ["msgTeaser"];
+    const talk_block = ["msgTeaser"];
     return talk_block;
 }
 
-function msgStart(text) {
-    var talk_block = [
+function msgStart(index) {
+    const talk_block = [
         {
             "type": "text",
             "text": "おはようございます。\n今日は月曜日ですね。\n今日からまた新しい\n一週間の始まりです。\n現在の口座残高\nは657,980円です。"
-        },
-        {
+        }
+    ];
+    if (index !== 2) {
+        talk_block.push({
             "type": "text",
             "text": "今週の口座入出金予定をご案内します。"
-        },
-        msgStartType(parseInt(text) - 1)
-    ];
-    
+        });
+    }
+    talk_block.push(msgStartType(index - 1));
+
     return talk_block;
 }
 
@@ -318,7 +318,7 @@ function msgStartType (index) {
             }
         }
     ];
-    
+
     return msgType[index]
 }
 
