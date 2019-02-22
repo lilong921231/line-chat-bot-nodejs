@@ -1,7 +1,11 @@
 function msgReply(text) {
-    if (text.startWith("B_")) {
-        return msgInsights();
+    var reg = /^B_[0-9]{4}$/;
+    if (text.equals("B_")) {
+        return msgInsights("B_2307");
+    } else if (reg.test(text)) {
+        return msgInsights(text);
     }
+    
     switch (text) {
         case "1":
             return msgStart();
