@@ -10,6 +10,8 @@ function msgReply(text) {
         case "1":
         case "2":
             return msgStart(parseInt(text));
+        case "3":
+            return msgWed();
         default:
             return [text];
     }
@@ -17,6 +19,312 @@ function msgReply(text) {
 
 function msgInsights() {
     const talk_block = ["msgTeaser"];
+    return talk_block;
+}
+
+function msgWed() {
+    const talk_block = [{
+        "type": "flex",
+        "altText": "Flex Message",
+        "contents": {
+            "type": "bubble",
+            "direction": "ltr",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "3月の家賃"
+                    },
+                    {
+                        "type": "text",
+                        "text": "１２万円",
+                        "align": "center",
+                        "weight": "bold"
+                    },
+                    {
+                        "type": "text",
+                        "text": "の引き落としが完了しました"
+                    }
+                ]
+            }
+        }
+    }];
+    talk_block.push({
+        "type": "flex",
+        "altText": "Flex Message",
+        "contents": {
+            "type": "bubble",
+            "direction": "ltr",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "現在の家賃と同等の月々返済額で、35年ローンをお借りする場合、一般的に",
+                        "wrap": true
+                    },
+                    {
+                        "type": "text",
+                        "text": "3,919万円",
+                        "align": "center",
+                        "weight": "bold"
+                    },
+                    {
+                        "type": "text",
+                        "text": "の借入可能枠となります。"
+                    }
+                ]
+            }
+        }
+    });
+    talk_block.push({
+        "type": "flex",
+        "altText": "Flex Message",
+        "contents": {
+            "type": "bubble",
+            "direction": "ltr",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "10年後42歳となるあなたにとって、お勧めとなるご返済期間が25年となります。同じように月々の返済額が12万円ですと、一般的に、",
+                        "wrap": true
+                    },
+                    {
+                        "type": "text",
+                        "text": "3000万円",
+                        "align": "center",
+                        "weight": "bold"
+                    },
+                    {
+                        "type": "text",
+                        "text": "の借入可能枠となります。"
+                    }
+                ]
+            }
+        }
+    });
+    talk_block.push({
+        "type": "flex",
+        "altText": "Flex Message",
+        "contents": {
+            "type": "bubble",
+            "direction": "ltr",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "同じ借入枠で返済期間が違う場合の毎月の返済額も違います。",
+                        "wrap": true
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "sm",
+                        "color": "#FFFFFF"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "借入枠",
+                                        "size": "xxs",
+                                        "align": "center"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "借入時の年齢",
+                                        "size": "xxs",
+                                        "align": "center"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "返済期間",
+                                        "size": "xxs",
+                                        "align": "center"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "毎月の返済額",
+                                        "size": "xxs",
+                                        "align": "center"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "horizontal",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "4,000\n万円",
+                                                "size": "xxs",
+                                                "align": "center",
+                                                "gravity": "center",
+                                                "wrap": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "32歳",
+                                                "size": "xxs",
+                                                "align": "center"
+                                            },
+                                            {
+                                                "type": "text",
+                                                "text": "42歳",
+                                                "size": "xxs",
+                                                "align": "center"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "35年",
+                                                "size": "xxs",
+                                                "align": "center"
+                                            },
+                                            {
+                                                "type": "text",
+                                                "text": "25年",
+                                                "size": "xxs",
+                                                "align": "center"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "12万2473円",
+                                                "size": "xxs",
+                                                "align": "center"
+                                            },
+                                            {
+                                                "type": "text",
+                                                "text": "15万9974円",
+                                                "size": "xxs",
+                                                "align": "center"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "sm",
+                        "color": "#FFFFFF"
+                    },
+                    {
+                        "type": "text",
+                        "text": "一般的に、",
+                        "wrap": true
+                    },
+                    {
+                        "type": "text",
+                        "text": "マイホームを早く購入すれば返済期間を長くでき、その分月々の返済額が抑えられます。",
+                        "wrap": true
+                    },
+                    {
+                        "type": "text",
+                        "text": "40代になるあなたにとって、子供の教育費、老後への備え、親の介護などにもお金が必要になる時期です。",
+                        "wrap": true
+                    },
+                    {
+                        "type": "text",
+                        "text": "住宅費で節約できたお金は少しでも家計のお助けとなります！",
+                        "wrap": true
+                    }
+                ]
+            }
+        }
+    });
+    talk_block.push({
+        "type": "flex",
+        "altText": "Flex Message",
+        "contents": {
+            "type": "bubble",
+            "direction": "ltr",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "家計を圧迫することなく、",
+                        "wrap": true
+                    },
+                    {
+                        "type": "text",
+                        "text": "夢のマイホームが購入できるかも・・・！",
+                        "wrap": true
+                    },
+                    {
+                        "type": "text",
+                        "text": "これからのライフプラン、マネープランを含めて、対面で、ファイナンシャルアドバイザーに相談してみませんか？",
+                        "wrap": true
+                    },
+                    {
+                        "type": "text",
+                        "text": "今すぐに相談可能な、お近くの店舗をご紹介することも可能です。",
+                        "wrap": true
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "none",
+                "contents": [
+                    {
+                        "type": "button",
+                        "action": {
+                            "type": "message",
+                            "label": "相談する",
+                            "text": "相談する"
+                        }
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                            "type": "message",
+                            "label": "また今度にする",
+                            "text": "また今度にする"
+                        }
+                    }
+                ]
+            }
+        }
+    });
     return talk_block;
 }
 
@@ -120,13 +428,11 @@ function msgStartType (index) {
                                     "contents": [
                                         {
                                             "type": "text",
-                                            "text": "　　給与",
-                                            "size": "sm"
+                                            "text": "　　給与"
                                         },
                                         {
                                             "type": "text",
                                             "text": "256,300円　　　",
-                                            "size": "sm",
                                             "align": "end"
                                         },
                                         {
@@ -183,13 +489,11 @@ function msgStartType (index) {
                                     "contents": [
                                         {
                                             "type": "text",
-                                            "text": "　　　口座振込（家賃）",
-                                            "size": "sm"
+                                            "text": "　　　口座振込（家賃）"
                                         },
                                         {
                                             "type": "text",
                                             "text": "- 120,000円　　",
-                                            "size": "sm",
                                             "align": "end"
                                         },
                                         {
@@ -242,13 +546,11 @@ function msgStartType (index) {
                                     "contents": [
                                         {
                                             "type": "text",
-                                            "text": "　　ABCカード引落し",
-                                            "size": "sm"
+                                            "text": "　　ABCカード引落し"
                                         },
                                         {
                                             "type": "text",
                                             "text": "- 51,780円　　　",
-                                            "size": "sm",
                                             "align": "end"
                                         },
                                         {
@@ -281,12 +583,10 @@ function msgStartType (index) {
                                 {
                                     "type": "text",
                                     "text": "推奨する今週の可処分所得：",
-                                    "size": "sm"
                                 },
                                 {
                                     "type": "text",
                                     "text": "５０，０００円",
-                                    "size": "sm",
                                     "align": "center"
                                 }
                             ]
