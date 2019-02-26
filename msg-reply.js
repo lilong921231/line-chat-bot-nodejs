@@ -136,6 +136,10 @@ function msgWed() {
                     {
                         "type": "box",
                         "layout": "vertical",
+                        "styles": {
+                            "backgroundColor": "#8DB1E5",
+                            "color": "#F61313"
+                        },
                         "contents": [
                             {
                                 "type": "box",
@@ -169,10 +173,7 @@ function msgWed() {
                                         "size": "xxs",
                                         "align": "center"
                                     }
-                                ],
-                                "styles": {
-                                    "backgroundColor": "#8DB1E5",
-                                }
+                                ]
                             },
                             {
                                 "type": "box",
