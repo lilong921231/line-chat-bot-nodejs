@@ -19,20 +19,21 @@ const bot = lineBot({
 let infos, index = 0;
 
 function msgSend(event) {
-    event.reply(infos[index]).then(function (data) {
+    event.reply(infos).then(function (data) {
+//     event.reply(infos[index]).then(function (data) {
         // success
         console.log("=============success==============");
         console.log(event.message.text);
         console.log(event.source.userId);
         console.log(data);
         index = index + 1;
-        const timer = setInterval(function(){
-            bot.push(event.source.userId, infos[index]);
-            index = index + 1;
-            if (index >= infos.length) {
-                clearTimeout(timer);
-            }
-        }, 2000);
+//         const timer = setInterval(function(){
+//             bot.push(event.source.userId, infos[index]);
+//             index = index + 1;
+//             if (index >= infos.length) {
+//                 clearTimeout(timer);
+//             }
+//         }, 2000);
     }).catch(function (error) {
         // error
         console.log("=============error==============");
