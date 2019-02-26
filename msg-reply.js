@@ -140,24 +140,28 @@ function msgWed() {
                                     {
                                         "type": "text",
                                         "text": "借入枠",
+                                        "flex": 2,
                                         "size": "xxs",
                                         "align": "center"
                                     },
                                     {
                                         "type": "text",
                                         "text": "借入時の年齢",
+                                        "flex": 3,
                                         "size": "xxs",
                                         "align": "center"
                                     },
                                     {
                                         "type": "text",
                                         "text": "返済期間",
+                                        "flex": 2,
                                         "size": "xxs",
                                         "align": "center"
                                     },
                                     {
                                         "type": "text",
                                         "text": "毎月の返済額",
+                                        "flex": 3,
                                         "size": "xxs",
                                         "align": "center"
                                     }
