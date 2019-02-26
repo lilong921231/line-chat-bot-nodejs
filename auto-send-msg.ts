@@ -1,6 +1,7 @@
 const schedule = require('node-schedule');
 
 function scheduleExec() {
+    console.log('scheduleExec:' + new Date());
     scheduleObjectSendMessage();
     scheduleRecurrenceRule();
 }
