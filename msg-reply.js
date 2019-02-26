@@ -19,10 +19,6 @@ function msgReply(text) {
 
 function msgInsights() {
     const talk_block = ["msgTeaser"];
-    talk_block.push({
-        "type": "text",
-        "text": "\\uDBC0\\uDC84 LINE emoji"
-    });
     return talk_block;
 }
 
@@ -72,7 +68,7 @@ function msgWed() {
                     },
                     {
                         "type": "text",
-                        "text": "\\u3,919\\u万円",
+                        "text": "3,919万円",
                         "align": "center",
                         "weight": "bold"
                     },
@@ -119,6 +115,11 @@ function msgWed() {
         "contents": {
             "type": "bubble",
             "direction": "ltr",
+            "styles": {
+                "box": {
+                    "backgroundColor": "#8DB1E5"
+                }
+            },
             "body": {
                 "type": "box",
                 "layout": "vertical",
@@ -136,10 +137,8 @@ function msgWed() {
                     {
                         "type": "box",
                         "layout": "vertical",
-                        "styles": {
-                            "backgroundColor": "#8DB1E5",
-                            "color": "#F61313"
-                        },
+                        "backgroundColor": "#8DB1E5",
+                        "color": "#F61313",
                         "contents": [
                             {
                                 "type": "box",
