@@ -179,6 +179,7 @@ function msgWed() {
                                                 "type": "text",
                                                 "text": "4,000\n万円",
                                                 "size": "xxs",
+                                                "flex": 2,
                                                 "align": "center",
                                                 "gravity": "center",
                                                 "wrap": true
@@ -188,6 +189,7 @@ function msgWed() {
                                     {
                                         "type": "box",
                                         "layout": "vertical",
+                                        "flex": 3,
                                         "contents": [
                                             {
                                                 "type": "text",
@@ -206,6 +208,7 @@ function msgWed() {
                                     {
                                         "type": "box",
                                         "layout": "vertical",
+                                        "flex": 2,
                                         "contents": [
                                             {
                                                 "type": "text",
@@ -224,6 +227,7 @@ function msgWed() {
                                     {
                                         "type": "box",
                                         "layout": "vertical",
+                                        "flex": 3,
                                         "contents": [
                                             {
                                                 "type": "text",
