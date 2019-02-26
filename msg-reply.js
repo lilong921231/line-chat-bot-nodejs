@@ -21,7 +21,7 @@ function msgInsights() {
     const talk_block = ["msgTeaser"];
     talk_block.push({
         "type": "text",
-        "text": "\uDBC0\uDC84 LINE emoji"
+        "text": "\\uDBC0\\uDC84 LINE emoji"
     });
     return talk_block;
 }
@@ -72,7 +72,7 @@ function msgWed() {
                     },
                     {
                         "type": "text",
-                        "text": "\u3,919\u万円",
+                        "text": "\\u3,919\\u万円",
                         "align": "center",
                         "weight": "bold"
                     },
