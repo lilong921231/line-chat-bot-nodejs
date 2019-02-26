@@ -1,7 +1,7 @@
 const lineBot = require('linebot');
 const express = require('express');
 const reply = require('./msg-reply');
-const scheduleObj = require("auto-send-msg");
+// const scheduleObj = require("auto-send-msg");
 
 // const config = {
 //     channelId: process.env.CHANNEL_ID,
@@ -14,7 +14,7 @@ const bot = lineBot({
     channelAccessToken: "wjJikM9SGt8DmurAb14g20haoST6tMLq2Q9qJnUUZfkr/E7gKEYdAmT9rDj1efz/c6Zf8ISCNrzm+6SkQUZxNPZB4obXI60HlC8b8bVDqT1nBhpCylwfk8OpnjPf+wtbxCkVmCda8wcQBPM3BkdyIwdB04t89/1O/w1cDnyilFU="
 });
 
-scheduleObj.scheduleExec();
+// scheduleObj.scheduleExec();
 
 let infos, index = 0;
 
