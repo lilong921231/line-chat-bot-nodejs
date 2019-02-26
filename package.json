@@ -2,7 +2,7 @@
   "name": "fujitsu_bank",
   "version": "1.0.0",
   "description": "Test of LINE Chatbot",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "start": "node ."
   },
