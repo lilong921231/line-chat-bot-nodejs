@@ -165,7 +165,10 @@ function msgWed() {
                                         "size": "xxs",
                                         "align": "center"
                                     }
-                                ]
+                                ],
+                                "styles": {
+                                    "backgroundColor": "#8DB1E5",
+                                }
                             },
                             {
                                 "type": "box",
