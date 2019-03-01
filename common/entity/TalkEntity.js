@@ -1,4 +1,4 @@
-const imgUrl = "https://d2ca28aa.ngrok.io/public/images/";
+const imgUrl = "https://sinkibank.herokuapp.com/images/";
 
 class talkEntity {
 
