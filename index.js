@@ -1,4 +1,5 @@
 const serverTest = require('./common/TalkSever');
+const userApi = require('./common/UserInsight');
 const express = require('express');
 const bot = require('./line.config');
 
@@ -16,10 +17,7 @@ function botInitial () {
 
         if(event.message.text === "0") {
             //http://127.0.0.1:8080/
-            app.post("http://127.0.0.1:8080/", function (req, res) {
-                console.log(req);
-                console.log(res);
-            });
+            userApi.getUserInsights();
             return;
         }
 
