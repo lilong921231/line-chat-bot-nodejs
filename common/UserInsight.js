@@ -28,6 +28,7 @@ function getUserInsights(userId) {
     };
 
     var req = http.request(options, function (res) {
+        console.log('http.request');
         console.log('STATUS: ' + res.status);
         if (res.status === 200) {
             console.log(res);
