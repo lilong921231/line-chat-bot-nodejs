@@ -1,6 +1,7 @@
+// http://52.199.78.16:8080/pserver/execute?channel=MIZUHO_QA
 const http = require("http");
 const querystring = require('querystring');
-// http://52.199.78.16:8080/pserver/execute?channel=MIZUHO_QA
+
 function getUserInsights(userId) {
 
     var postData = {
@@ -15,9 +16,9 @@ function getUserInsights(userId) {
 
     var content = querystring.stringify(postData);
     var options = {
-        hostname: '127.0.0.1',
+        hostname: '52.199.78.16',
         port: 8080,
-        // path: '/pserver/execute?channel=MIZUHO_QA',
+        path: '/pserver/execute?channel=MIZUHO_QA',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -27,9 +28,11 @@ function getUserInsights(userId) {
     };
 
     var req = http.request(options, function (res) {
-        console.log(res);
-        console.log('STATUS: ' + res.statusCode);
-        console.log('HEADERS: ' + JSON.stringify(res.headers));
+        console.log('STATUS: ' + res.status);
+        if (res.status === 200) {
+            console.log(res);
+        }
+        // console.log('HEADERS: ' + JSON.stringify(res));
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
             console.log('BODY: ' + chunk);
@@ -37,6 +40,7 @@ function getUserInsights(userId) {
     });
 
     req.on('error', function (e) {
+        console.log(e);
         console.log('problem with request: ' + e.message);
     });
 
