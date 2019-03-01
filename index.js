@@ -1,8 +1,9 @@
-const express = require('express');
-const app = express();
-const bot = require('./line.config');
 const serverTest = require('./common/TalkSever');
+const express = require('express');
+const bot = require('./line.config');
 
+const app = express();
+let server;
 
 botInitial();
 serverInitial();
@@ -12,8 +13,9 @@ function botInitial () {
         console.log('++++++++++++++++++++++++++++++++++++++');
         console.log(JSON.stringify(event));
         console.log('++++++++++++++++++++++++++++++++++++++');
-		
+
         if(event.message.text === "0") {
+            //http://127.0.0.1:8080/
             app.post("http://127.0.0.1:8080/", function (req, res) {
                 console.log(req);
                 console.log(res);
@@ -66,9 +68,8 @@ function serverInitial() {
         console.log("Request for " + req.url + " received.");
     });
 
-    //http://127.0.0.1:8080/
     //express port:3000
-    var server = app.listen(process.env.PORT || 3000, function() {
+    server = app.listen(process.env.PORT || 3000, function() {
         var port = server.address().port;
         console.log(server._workers);
         console.log(server._connections);
