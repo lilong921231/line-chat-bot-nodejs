@@ -42,6 +42,7 @@ function getUserInsights(userId) {
     req.on('error', function (e) {
         console.log(e);
         console.log('problem with request: ' + e.message);
+        console.log(e);
     });
 
     // write data to request body
