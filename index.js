@@ -16,7 +16,7 @@ bot.on('message', function(event) {
         });
         return;
     }
-    
+
     event.reply(serverTest.talkServer(event.message.text)).then(function (data) {
         // success
         console.log('=============== server =================');
