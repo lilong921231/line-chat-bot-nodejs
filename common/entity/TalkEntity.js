@@ -1,4 +1,4 @@
-
+const imgUrl = "https://d2ca28aa.ngrok.io/public/images/";
 
 class talkEntity {
 
@@ -159,7 +159,7 @@ class talkEntity {
                             {
                                 type: "image",
                               // previewImageUrl: '',
-                                url: "https://github.com/lilong921231/line-bot-nodejs/blob/master/public/images/wages.jpg?raw=true",
+                                url: imgUrl + "wages.jpg",
                                 margin: "md",
                                 size: "full",
                                 aspectRatio: "20:13"
@@ -195,7 +195,7 @@ class talkEntity {
                             },
                             {
                                 type: "image",
-                                url: "https://github.com/lilong921231/line-bot-nodejs/blob/master/public/images/accountBalance.jpg?raw=true",
+                                url: imgUrl + "accountBalance.jpg",
                                 margin: "md",
                                 size: "full",
                                 aspectRatio: "20:13"
@@ -226,7 +226,7 @@ class talkEntity {
                             },
                             {
                                 type: "image",
-                                url: "https://github.com/lilong921231/line-bot-nodejs/blob/master/public/images/creditCard.jpg?raw=true",
+                                url: imgUrl + "creditCard.jpg",
                                 margin: "md",
                                 size: "full",
                                 aspectRatio: "20:13"
@@ -341,7 +341,7 @@ class talkEntity {
                         },
                         {
                             type: "image",
-                            url: "../../public/images/cake.png",
+                            url: imgUrl + "cake.png",
                             margin: "md"
                         },
                         {
@@ -371,7 +371,7 @@ class talkEntity {
                         },
                         {
                             type: "image",
-                            url: "../../public/images/rose.png"
+                            url: imgUrl + "rose.png"
                         },
                         {
                             type: "text",
@@ -421,7 +421,7 @@ class talkEntity {
                         },
                         {
                             type: "image",
-                            url: "../../public/images/dinner.png",
+                            url: imgUrl + "dinner.png",
                             margin: "md"
                         },
                         {

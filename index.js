@@ -2,30 +2,29 @@ var express = require('express');
 var bot = require('./line.config');
 var serverTest = require('./common/TalkSever');
 
+
+
 bot.on('message', function(event) {
     console.log('++++++++++++++++++++++++++++++++++++++');
-    console.log('++++++++++++++++++++++++++++++++++++++');
     console.log(JSON.stringify(event));
-    console.log(event);
     console.log('++++++++++++++++++++++++++++++++++++++');
-    console.log('++++++++++++++++++++++++++++++++++++++');
-   /* let ceshi;
-    if(serverTest.talkServer(event.message.text).contents.header.contents[2].action.text === '2') {
-        ceshi = serverTest.talkServer('2');
-    } else {
-       ceshi = serverTest.talkServer(event.message.text);
-    }
-*/
 
-        event.reply(serverTest.talkServer(event.message.text)).then(function (data) {
+    if(event.message.text === "insights") {
+        app.post("http://127.0.0.1:8080/", function (req, res) {
+            console.log(req);
+            console.log(res);
+        });
+        return;
+    }
+    
+    event.reply(serverTest.talkServer(event.message.text)).then(function (data) {
         // success
         console.log('=============== server =================');
-        console.log(event.message);
-        console.log(serverTest.talkServer(event.message.text));
+        console.log(event);
 
         console.log('=============JSON================');
         console.log(JSON.stringify(serverTest.talkServer(event.message.text)));
-            console.log('=============JSON end================');
+        console.log('=============JSON end================');
     }).catch(function (error) {
         // error
         console.log(error);
@@ -33,15 +32,44 @@ bot.on('message', function(event) {
     });
 });
 
+bot.on('postback', function (event) {
+
+    console.log(server._events);
+    console.log('=============postback JSON=============');
+
+    console.log(event);
+    console.log(JSON.stringify(event.postback));
+    console.log('=============postback JSON end=============');
+
+    event.reply(serverTest.talkServer(event.postback.data))
+        .then(function (data) {
+            console.log('=============postback=============');
+            console.log(JSON.stringify(serverTest.talkServer(event.postback.data)));
+        }).catch(function(error) {
+        console.log('==============error=============')
+        console.log(error);
+    })
+});
+
 const app = express();
 const linebotParser = bot.parser();
 app.post('/', linebotParser);
 
+//イメージをロードして、パス：public/images
+app.get('/public/images/*', function (req, res) {
+    res.sendFile( __dirname + "/" + req.url );
+    console.log("Request for " + req.url + " received.");
+});
+
+//http://127.0.0.1:8080/
 //express port:3000
 var server = app.listen(process.env.PORT || 3000, function() {
     var port = server.address().port;
+    console.log(server._workers);
+    console.log(server._connections);
     console.log("App now running on port:", port);
 });
+
 // -----------------------------------------------------------------------------
 // モジュールのインポート
 /*

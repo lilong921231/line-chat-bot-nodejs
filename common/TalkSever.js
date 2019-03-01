@@ -5,6 +5,8 @@ var talk = new talkEntity();
 
 function talkServer(eventSelect) {
     switch (eventSelect) {
+        case "0":
+            return "insights";
         case '1':
             console.log("=========test1===========");
             return talk.firstTimeEntity('5000000');
@@ -41,7 +43,7 @@ function talkServer(eventSelect) {
                                 action: {
                                     type: "postback",
                                     label: "OK",
-                                    data: "action=buy&itemid=111"
+                                    data: "2"
                                     // contents: talk.detailedOfWeek('2018-11-09', day, '500000', '-2000000', '20000000')
                                 }
                             }
