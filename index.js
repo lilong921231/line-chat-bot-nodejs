@@ -63,10 +63,11 @@ function serverInitial() {
     app.post('/', linebotParser);
 
     //イメージをロードして、パス：public/images
-    app.get('/public/images/*', function (req, res) {
-        res.sendFile( __dirname + "/" + req.url );
-        console.log("Request for " + req.url + " received.");
-    });
+    app.use(express.static('public'));
+//     app.get('/public/images/*', function (req, res) {
+//         res.sendFile( __dirname + "/" + req.url );
+//         console.log("Request for " + req.url + " received.");
+//     });
 
     //express port:3000
     server = app.listen(process.env.PORT || 3000, function() {
