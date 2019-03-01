@@ -15,9 +15,10 @@ function getUserInsights(userId) {
 
     var content = querystring.stringify(postData);
     var options = {
-        hostname: 'http://52.199.78.16',
+//         hostname: 'http://52.199.78.16', //08e8ae30.ngrok.io
+        host: 'http://08e8ae30.ngrok.io',
         port: 8080,
-        path: '/pserver/execute?channel=MIZUHO_QA',
+//         path: '/pserver/execute?channel=MIZUHO_QA',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
