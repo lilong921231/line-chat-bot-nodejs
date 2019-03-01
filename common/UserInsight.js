@@ -15,7 +15,7 @@ function getUserInsights(userId) {
 
     var content = querystring.stringify(postData);
     var options = {
-        hostname: '127.0.0.1',
+        hostname: 'http://127.0.0.1',
         port: 8080,
         // path: '/pserver/execute?channel=MIZUHO_QA',
         method: 'POST',
