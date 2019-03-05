@@ -1,5 +1,4 @@
 const serverTest = require('./common/TalkSever');
-const userApi = require('./common/UserInsight');
 const express = require('express');
 const bot = require('./line.config');
 
@@ -15,24 +14,20 @@ function botInitial () {
         console.log(JSON.stringify(event));
         console.log('++++++++++++++++++++++++++++++++++++++');
 
-        if(event.message.text === "0") {
-            //http://127.0.0.1:8080/
-            userApi.getUserInsights();
-            return;
-        }
+        serverTest.talkServer(event.message.text).then(function (dataText) {
+            event.reply(dataText).then(function (data) {
+                // success
+                console.log('=============== server event =================');
+                console.log(event);
 
-        event.reply(serverTest.talkServer(event.message.text)).then(function (data) {
-            // success
-            console.log('=============== server =================');
-            console.log(event);
-
-            console.log('=============JSON================');
-            console.log(JSON.stringify(serverTest.talkServer(event.message.text)));
-            console.log('=============JSON end================');
-        }).catch(function (error) {
-            // error
-            console.log(error);
-            console.log('=============== error =================');
+                console.log('=============JSON================');
+                console.log(JSON.stringify(dataText));
+                console.log('=============JSON end================');
+            }).catch(function (error) {
+                // error
+                console.log(error);
+                console.log('=============== error =================');
+            });
         });
     });
 
@@ -69,9 +64,7 @@ function serverInitial() {
 
     //express port:3000
     server = app.listen(process.env.PORT || 3000, function() {
-        var port = server.address().port;
-        console.log(server._workers);
-        console.log(server._connections);
+        const port = server.address().port;
         console.log("App now running on port:", port);
     });
 }

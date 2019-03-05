@@ -1,55 +1,40 @@
 // http://52.199.78.16:8080/pserver/execute?channel=MIZUHO_QA
 const http = require("http");
-const querystring = require('querystring');
+const insightEntity = require("./entity/InsightEntity");
+const userInsight = new insightEntity();
 
-function getUserInsights(userId) {
+function getUserInsights(userId, date) {
+    return new Promise((resolve, reject)=>{
+        const options = userInsight.getOptions(userId, date);
 
-    var postData = {
-        "type": "getInsights",
-        "protocolVersion": "2.5",
-        "autoGenerate": false,
-        "showTeasers": true,
-        "showFacts": true,
-        "ctxId": "dashboard",
-        "lang": "en"
-    };
+        const postData = userInsight.getInsights("en");
 
-    var content = querystring.stringify(postData);
-    var options = {
-        hostname: '52.199.78.16',
-        port: 8080,
-        path: '/pserver/execute?channel=MIZUHO_QA',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'authToken': 'B_2307',
-            'effectivetime': '03/01/2019 00:00'
-        }
-    };
+        let response = "";
+        const req = http.request(options,function(res){
 
-    var req = http.request(options, function (res) {
-        console.log('http.request');
-        console.log('STATUS: ' + res.status);
-        if (res.status === 200) {
-            console.log(res);
-        }
-        // console.log('HEADERS: ' + JSON.stringify(res));
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-            console.log('BODY: ' + chunk);
+            console.log('STATUS: ' + res.statusCode);
+            if (res.statusCode === 200) {
+                console.log(res.headers);
+                res.setEncoding('utf-8');
+                res.on('data',function(chunk){
+                    // console.log(chunk);
+                    response += chunk;
+                });
+                res.on('end',function(chunk){
+                    console.log("============response================");
+                    console.log(JSON.parse(response));
+                    resolve(JSON.parse(response));
+                });
+            }
+        }).on('error',function(e){
+            console.log('problem with request: ' + e.message);
+            console.log(e);
         });
+
+        req.write(JSON.stringify(postData));
+
+        req.end();
     });
-
-    req.on('error', function (e) {
-        console.log('problem with request: ' + e.message);
-        console.log(e);
-    });
-
-    // write data to request body
-    req.write(content);
-
-    req.end();
-
 }
 
 module.exports = {
