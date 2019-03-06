@@ -10,15 +10,16 @@ serverInitial();
 
 function botInitial () {
     bot.on('message', function(event) {
-        console.log('++++++++++++++++++++++++++++++++++++++');
+        console.log('+++++++++++++++++++Index event+++++++++++++++++++');
         console.log(JSON.stringify(event));
-        console.log('++++++++++++++++++++++++++++++++++++++');
+        console.log('+++++++++++++++++++Index event+++++++++++++++++++');
 
         serverTest.talkServer(event.message.text).then(function (dataText) {
+            console.log(dataText);
             event.reply(dataText).then(function (data) {
                 // success
                 console.log('=============== server event =================');
-                console.log(event);
+                console.log(data);
 
                 console.log('=============JSON================');
                 console.log(JSON.stringify(dataText));
@@ -28,6 +29,10 @@ function botInitial () {
                 console.log(error);
                 console.log('=============== error =================');
             });
+        }).catch(function (error) {
+            // error
+            console.log(error);
+            console.log('=============== error =================');
         });
     });
 
@@ -40,14 +45,20 @@ function botInitial () {
         console.log(JSON.stringify(event.postback));
         console.log('=============postback JSON end=============');
 
-        event.reply(serverTest.talkServer(event.postback.data))
-            .then(function (data) {
+        serverTest.talkServer(event.postback.data).then(function (dataText) {
+            event.reply(dataText).then(function (data) {
                 console.log('=============postback=============');
-                console.log(JSON.stringify(serverTest.talkServer(event.postback.data)));
+                console.log(data);
+                console.log(JSON.stringify(dataText));
             }).catch(function(error) {
-            console.log('==============error=============')
+                console.log('==============error=============')
+                console.log(error);
+            })
+        }).catch(function (error) {
+            // error
             console.log(error);
-        })
+            console.log('=============== error =================');
+        });
     });
 }
 

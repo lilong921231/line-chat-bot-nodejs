@@ -1,6 +1,8 @@
 function headers(userId, time) {
     const header = {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Accept-Encoding': 'gzip',
         'authToken': userId
     };
     if (time) {
@@ -9,7 +11,7 @@ function headers(userId, time) {
     return header;
 }
 
-class insightEntity {
+class insightRequestEntity {
     getInsights(lang){
         return {
             "type": "getInsights",
@@ -32,4 +34,4 @@ class insightEntity {
     }
 }
 
-module.exports = insightEntity;
+module.exports = insightRequestEntity;
